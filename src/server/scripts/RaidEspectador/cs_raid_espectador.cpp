@@ -18,13 +18,13 @@
 
 /* ScriptData
 Name: raid_espectador_commandscript
-%Complete: 10
+%Complete: 12
 Comment: Raid Espectador
          
          Esta es una script para entrar a las raids siendo un pj normal y poder visualizar
-         asi como controlar que no exista bugueos, me interesa adem√°s que la gente nueva en
-         el server que sea lvl_10 como m√≠nimo pueda observar el movimiento del mismo, esto con
-         el af√°n de mostrar lo que se tiene y crear mejor hype entre la comunidad de wow que viene
+         asi como controlar que no exista bugueos, me interesa adem·s que la gente nueva en
+         el server que sea lvl_10 como mÌnimo pueda observar el movimiento del mismo, esto con
+         el af·n de mostrar lo que se tiene y crear mejor hype entre la comunidad de wow que viene
          a jugar tlk en un servidor privado como es wowrean.
          
 Category: raidespectadorscripts
@@ -53,15 +53,57 @@ public:
     {
         static std::vector<ChatCommand> raidespectadorCommandTable =
         {
-
+            { "listaraids",     rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTARAIDS, false, &HandleREListaRaidsCommand,       "" },
+            { "verraid",        rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_VERRAID,    false, &HandleREVerRaidCommand,        "" },
+            { "salir",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_SALIR,      false, &HandleRESalidCommand, "" },
+            { "",               rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR,            false, &HandleRECommand,           "" },
         };
         static std::vector<ChatCommand> commandTable =
         {
-
+            { "raidespectador", rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR, false, nullptr, "", raidespectadorCommandTable },
         };
         return commandTable;
     }
 
+    // Comando para desplegar la lista de raids al momento (holder)
+    static bool HandleREListaRaidsCommand(ChatHandler* handler, char const* args)
+    {
+        if (!*args)
+            return false;
+
+        return true;
+    }
+
+    // Comando para entrar a ver la raid (holder)
+    static bool HandleREVerRaidCommand(ChatHandler* handler, char const* args)
+    {
+        if (!*args)
+            return false;
+
+        return true;
+    }
+
+    // Comando para salir de la raid (holder)
+    static bool HandleRESalidCommand(ChatHandler* handler, char const* args)
+    {
+        if (!*args)
+            return false;
+
+        return true;
+    }
+
+    // InformaciÛn acerca del comando en sÌ y como usarlo (holder)
+    static bool HandleRECommand(ChatHandler* handler, char const* args)
+    {
+        Player* _player = handler->GetSession()->GetPlayer();
+
+        if (!*args)
+        {
+            return true;
+        }
+
+        return false;
+    }
 };
 
 void AddSC_raidespectador_commandscript()
