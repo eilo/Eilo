@@ -8,7 +8,7 @@ INSERT INTO `command` (`name`, `permission`, `help`) VALUES
 
 DELETE FROM `command` WHERE `name`='raidespectador lista';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES
-('raidespectador lista', 1002, 'Sintaxis: .raidespectador lista\nDevuelve la lista de raids, líder y guild(de ser el caso) que actualmente estan armadas y dentro de una instance en el servidor.');
+('raidespectador lista', 1002, 'Sintaxis: .raidespectador lista\nDevuelve la lista de raids con el respectivo líder, nombre de instance, jugadores y progresión que actualmente estan dentro luchando.');
 
 DELETE FROM `command` WHERE `name`='raidespectador entrar';
 INSERT INTO `command` (`name`, `permission`, `help`) VALUES
