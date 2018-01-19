@@ -23,9 +23,9 @@ Comment: Raid Espectador
          
          Esta es una script para entrar a las raids siendo un pj normal y poder visualizar
          asi como controlar que no exista bugueos, me interesa además que la gente nueva en
-         el server que sea lvl_10 como mínimo pueda observar el movimiento del mismo, esto con
-         el afán de mostrar lo que se tiene y crear mejor hype entre la comunidad de wow que viene
-         a jugar tlk en un servidor privado como es wowrean.
+         el server pueda observar el movimiento del mismo, esto con el afán de mostrar lo
+         que se tiene y crear mejor hype entre la comunidad de wow que viene a jugar tlk
+         en un servidor privado como es wowrean.
          
 Category: raidespectadorscripts
 EndScriptData */
@@ -53,8 +53,8 @@ public:
     {
         static std::vector<ChatCommand> raidespectadorCommandTable =
         {
-            { "listaraids",     rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTA,      false, &HandleREListaCommand,       "" },
-            { "verraid",        rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_ENTRAR,     false, &HandleREEntrarCommand,      "" },
+            { "lista",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTA,      false, &HandleREListaCommand,       "" },
+            { "entrar",         rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_ENTRAR,     false, &HandleREEntrarCommand,      "" },
             { "salir",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_SALIR,      false, &HandleRESalidCommand,       "" },
             { "",               rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR,            false, &HandleRECommand,            "" },
         };
@@ -68,8 +68,7 @@ public:
     // Comando para desplegar la lista de raids al momento (holder)
     static bool HandleREListaCommand(ChatHandler* handler, char const* args)
     {
-        if (!*args)
-            return false;
+        handler->SendSysMessage("aquí debo traer la lista de instancesid y verificar los grupos online");
 
         return true;
     }
@@ -99,6 +98,7 @@ public:
 
         if (!*args)
         {
+            handler->SendSysMessage("Simplemente para saber que estoy aqui y que debe aparecer texto indicando que tengo 3 opciones, sino aqui incluirlo");
             return true;
         }
 

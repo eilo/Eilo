@@ -213,6 +213,7 @@ class TC_GAME_API InstanceSaveManager
         static void DeleteInstanceFromDB(uint32 instanceid);
 
         InstanceSave* GetInstanceSave(uint32 InstanceId);
+        InstanceSaveHashMap GetInstanceSaveHashMap() { return m_instanceSaveById; }
 
         /* statistics */
         uint32 GetNumInstanceSaves() const { return uint32(m_instanceSaveById.size()); }
