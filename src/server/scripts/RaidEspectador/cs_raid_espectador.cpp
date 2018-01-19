@@ -53,10 +53,10 @@ public:
     {
         static std::vector<ChatCommand> raidespectadorCommandTable =
         {
-            { "listaraids",     rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTARAIDS, false, &HandleREListaRaidsCommand,       "" },
-            { "verraid",        rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_VERRAID,    false, &HandleREVerRaidCommand,        "" },
-            { "salir",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_SALIR,      false, &HandleRESalidCommand, "" },
-            { "",               rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR,            false, &HandleRECommand,           "" },
+            { "listaraids",     rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTA,      false, &HandleREListaCommand,       "" },
+            { "verraid",        rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_ENTRAR,     false, &HandleREEntrarCommand,      "" },
+            { "salir",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_SALIR,      false, &HandleRESalidCommand,       "" },
+            { "",               rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR,            false, &HandleRECommand,            "" },
         };
         static std::vector<ChatCommand> commandTable =
         {
@@ -66,7 +66,7 @@ public:
     }
 
     // Comando para desplegar la lista de raids al momento (holder)
-    static bool HandleREListaRaidsCommand(ChatHandler* handler, char const* args)
+    static bool HandleREListaCommand(ChatHandler* handler, char const* args)
     {
         if (!*args)
             return false;
@@ -75,7 +75,7 @@ public:
     }
 
     // Comando para entrar a ver la raid (holder)
-    static bool HandleREVerRaidCommand(ChatHandler* handler, char const* args)
+    static bool HandleREEntrarCommand(ChatHandler* handler, char const* args)
     {
         if (!*args)
             return false;

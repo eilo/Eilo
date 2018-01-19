@@ -780,8 +780,8 @@ enum RBACPermissions
     //
     // custom permissions 1000+
     RBAC_PERM_COMMAND_RAID_ESPECTADOR                        = 1001,
-    RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTARAIDS             = 1002,
-    RBAC_PERM_COMMAND_RAID_ESPECTADOR_VERRAID                = 1003,
+    RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTA                  = 1002,
+    RBAC_PERM_COMMAND_RAID_ESPECTADOR_ENTRAR                 = 1003,
     RBAC_PERM_COMMAND_RAID_ESPECTADOR_SALIR                  = 1004,
     RBAC_PERM_MAX
 };
