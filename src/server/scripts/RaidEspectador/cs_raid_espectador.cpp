@@ -53,7 +53,6 @@ public:
     {
         static std::vector<ChatCommand> raidespectadorCommandTable =
         {
-            { "lista",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_LISTA,      false, &HandleREListaCommand,       "" },
             { "entrar",         rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_ENTRAR,     false, &HandleREEntrarCommand,      "" },
             { "salir",          rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR_SALIR,      false, &HandleRESalidCommand,       "" },
             { "",               rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR,            false, &HandleRECommand,            "" },
@@ -63,14 +62,6 @@ public:
             { "raidespectador", rbac::RBAC_PERM_COMMAND_RAID_ESPECTADOR, false, nullptr, "", raidespectadorCommandTable },
         };
         return commandTable;
-    }
-
-    // Comando para desplegar la lista de raids al momento (holder)
-    static bool HandleREListaCommand(ChatHandler* handler, char const* args)
-    {
-        handler->SendSysMessage("aquí debo traer la lista de instancesid y verificar los grupos online");
-
-        return true;
     }
 
     // Comando para entrar a ver la raid (holder)

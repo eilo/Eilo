@@ -10,26 +10,18 @@ INSERT INTO `rbac_permissions` (`id`, `name`) VALUES (1001, "Comando: raidespect
 DELETE FROM `rbac_linked_permissions` WHERE `id` = 199 and `linkedId` = 1001;
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199, 1001);
 
--- Añadiendo el comando 1002 (.raidespectador lista) a la lista de permisos
+-- Añadiendo el comando 1003 (.raidespectador entrar) a la lista de permisos
 DELETE FROM `rbac_permissions` WHERE `id` = 1002;
-INSERT INTO `rbac_permissions` (`id`, `name`) VALUES (1002, "Comando: raidespectador lista");
+INSERT INTO `rbac_permissions` (`id`, `name`) VALUES (1002, "Comando: raidespectador entrar");
 
--- Asociando el comando 1002 (.raidespectador lista) con el rol 199 (player comun y silvestre)
+-- Asociando el comando 1003 (.raidespectador entrar) con el rol 199 (player comun y silvestre)
 DELETE FROM `rbac_linked_permissions` WHERE `id` = 199 and `linkedId` = 1002;
 INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199, 1002);
 
--- Añadiendo el comando 1003 (.raidespectador entrar) a la lista de permisos
-DELETE FROM `rbac_permissions` WHERE `id` = 1003;
-INSERT INTO `rbac_permissions` (`id`, `name`) VALUES (1003, "Comando: raidespectador entrar");
-
--- Asociando el comando 1003 (.raidespectador entrar) con el rol 199 (player comun y silvestre)
-DELETE FROM `rbac_linked_permissions` WHERE `id` = 199 and `linkedId` = 1003;
-INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199, 1003);
-
 -- Añadiendo el comando 1004 (.raidespectador salir) a la lista de permisos
-DELETE FROM `rbac_permissions` WHERE `id` = 1004;
-INSERT INTO `rbac_permissions` (`id`, `name`) VALUES (1004, "Comando: raidespectador salir");
+DELETE FROM `rbac_permissions` WHERE `id` = 1003;
+INSERT INTO `rbac_permissions` (`id`, `name`) VALUES (1003, "Comando: raidespectador salir");
 
 -- Asociando el comando 1004 (.raidespectador salir) con el rol 199 (player comun y silvestre)
-DELETE FROM `rbac_linked_permissions` WHERE `id` = 199 and `linkedId` = 1004;
-INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199, 1004);
+DELETE FROM `rbac_linked_permissions` WHERE `id` = 199 and `linkedId` = 1003;
+INSERT INTO `rbac_linked_permissions` (`id`, `linkedId`) VALUES (199, 1003);
